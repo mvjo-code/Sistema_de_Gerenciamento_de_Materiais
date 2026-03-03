@@ -1,0 +1,124 @@
+#root {
+  width: 100vw;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 0;
+}
+body {
+  background-image: linear-gradient(to top left, rgb(0, 0, 36) 50%, rgba(12, 12, 207, 0.456) 120%);
+  width: 100%;
+  height: 100%;
+
+}
+.container {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(13, 84, 138, 0.417);
+  align-items: center;
+  width: 30%;
+  min-width: 30em; 
+  max-height: auto;
+  border-radius: 12px; 
+}
+
+.container h2{
+  font-size: 3em;
+  align-self: left;
+}
+
+.container p{
+  color: rgb(197, 197, 197);
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+  margin-top: 20px;
+}
+
+.campo {
+  width: 100%; 
+  background-color: rgba(0, 0, 0, 0.102);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 8px;
+}
+
+.campo input, .campo select, .campo textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4%;
+  font-family: "Libre Baskerville", serif;
+  background-color: rgb(28, 28, 28);
+  outline: none;
+}
+
+.campo input:hover, .campo select:hover, .campo textarea:hover{
+    background-color: rgb(39, 39, 39);
+    border: solid 1px rgb(0, 83, 21);
+
+}
+hr {
+  background-color: blue;
+}
+
+button{
+  background-color: rgb(28, 28, 28);
+  max-width: 50%;
+  padding: 0.5em;
+  align-self: center;
+  border-radius: 10%;
+}  
+.btn-salvar{
+  background-color: rgb(2, 60, 2);
+  
+}
+.btn-salvar:hover{
+  background-color: rgb(0, 68, 0);
+  border: solid 2px rgba(255, 255, 255, 0.709);
+}
+
+.btn-ia{
+  background-color: rgb(61, 61, 0);
+  border: none;
+}
+
+.btn-ia:hover{
+  background-color: rgb(87, 87, 0);
+}
+
+/* para telas menores */
+@media (max-width: 768px){
+  #root{
+    padding: 0;
+    margin: 0;
+  }
+
+
+
+  .container {
+    min-height: 100dvh;
+    min-width: 100vw;
+    border-radius: 0;
+
+  }
+
+  .container h2{
+    font-size: 2.4em;
+  }
+
+  .container p{
+    font-size: 0.9em;
+  }
+}
+
+
+
+
