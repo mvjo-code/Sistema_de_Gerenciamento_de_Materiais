@@ -58,10 +58,16 @@ npm install
 npm run dev
 ```
 
-# Notas pessoais:
-## 1: 
-Pensei em colocar o fronend e o backend na nuvem com deploys diferentes, mas desisiti da ideia em foquei em outra coisa por causa do tempo apertado
-## 2: 
-A barra de pesquisa aceita uma tag existente em algum documento, Pensei inicialmente em criar uma Busca Semântica (RAG) para a barra de pesquisa, onde a IA interpretaria o significado do que o usuário digitou para achar materiais parecidos. Porém, para manter o foco nos requisitos obrigatórios do teste e entregar no prazo, mantive uma busca exata por Tags no banco de dados
-## 3: 
-Deixei o banco de dados disponível no repositório porque nele já têm exemplos de documentos
+# 💡 Notas Pessoais e Decisões de Projeto
+
+**1. Sobre o Deploy:**
+Eu até cheguei a planejar o deploy do frontend e do backend na nuvem separadamente. Porém, com o prazo do desafio apertado, decidi que seria mais estratégico focar na qualidade do código e em entregar os requisitos com excelência, em vez de correr riscos com problemas de infraestrutura de última hora.
+
+**2. A Barra de Pesquisa (A ideia do RAG):**
+A barra de pesquisa filtra o banco de dados buscando as tags exatas dos materiais. Confesso que minha ideia inicial era implementar uma Busca Semântica (RAG) para a IA interpretar o significado da busca e trazer resultados por contexto. Mas, para não fugir do escopo obrigatório e garantir a entrega no prazo, preferi manter o pé no chão e fazer a busca por tags funcionar redondinho!
+
+**3. Banco de Dados "Na Mão":**
+Deixei o arquivo do banco de dados local disponível no repositório de propósito. Fiz isso para facilitar a sua avaliação: assim que você rodar o projeto, já terá uma lista de documentos populada para testar a paginação e a interface logo de cara, sem precisar cadastrar tudo do zero.
+
+**4. Links de Demonstração:**
+Como os dados iniciais foram criados para testes, alguns materiais possuem links fictícios que podem dar erro 404 se você tentar acessar. Eles são puramente ilustrativos. Sinta-se à vontade para testar o botão "Editar" e trocar por um link real para ver o redirecionamento funcionando perfeitamente!
