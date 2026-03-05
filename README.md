@@ -64,7 +64,7 @@ npm run dev
 Eu até cheguei a planejar o deploy do frontend e do backend na nuvem separadamente. Porém, com o prazo do desafio apertado, decidi que seria mais estratégico focar na qualidade do código e em entregar os requisitos com excelência, em vez de correr riscos com problemas de infraestrutura de última hora.
 
 **2. A Barra de Pesquisa (A ideia do RAG):**
-A barra de pesquisa filtra o banco de dados buscando as tags exatas dos materiais. Confesso que minha ideia inicial era implementar uma Busca Semântica (RAG) para a IA interpretar o significado da busca e trazer resultados por contexto. Mas, para não fugir do escopo obrigatório e garantir a entrega no prazo, preferi manter o pé no chão e fazer a busca por tags funcionar redondinho!
+A barra de pesquisa filtra o banco de dados buscando as tags exatas dos materiais (ao clicar ENTER com a barra vazia o site mostra todos os materiais novamente). Confesso que minha ideia inicial era implementar uma Busca Semântica (RAG) para a IA interpretar o significado da busca e trazer resultados por contexto. Mas, para não fugir do escopo obrigatório e garantir a entrega no prazo, preferi manter o pé no chão e fazer a busca por tags funcionar redondinho!
 
 **3. Banco de Dados "Na Mão":**
 Deixei o arquivo do banco de dados local disponível no repositório de propósito. Fiz isso para facilitar a sua avaliação: assim que você rodar o projeto, já terá uma lista de documentos populada para testar a paginação e a interface logo de cara, sem precisar cadastrar tudo do zero.
