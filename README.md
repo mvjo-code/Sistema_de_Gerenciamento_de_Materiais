@@ -71,5 +71,6 @@ Deixei o arquivo do banco de dados local disponível no repositório de propósi
 
 **4. Links de Demonstração:**
 Como os dados iniciais foram criados para testes, alguns materiais possuem links fictícios que podem dar erro 404 se você tentar acessar. Eles são puramente ilustrativos. Sinta-se à vontade para testar o botão "Editar" e trocar por um link real para ver o redirecionamento funcionando perfeitamente!
+
 **5. Nota sobre responsividade:**
 A página de cadastro está totalmente responsiva, contudo não tive tempo suficiente para tornar a página inicial (Home) responsiva também, no final do arquivo Home.css é possível ver o início incompleto do meu trabalho de responsividade da Home.
