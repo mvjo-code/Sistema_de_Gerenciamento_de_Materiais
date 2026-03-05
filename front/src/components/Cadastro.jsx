@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import './Cadastro.css'; 
 
-function Cadastro() {
+function Cadastro({ aoVoltar}) {
   const [titulo, setTitulo] = useState('');
   const [tipo, setTipo] = useState('Vídeo');
   const [link, setLink] = useState('');
   const [descricao, setDescricao] = useState('');
   const [tags, setTags] = useState('');
 
+
+  // função para salvar o novo material no banco de dados
   const salvarNoBanco = async (evento) => {
-    evento.preventDefault(); 
+    evento.preventDefault(); // pedindo pro react parar o comportamento padrão
 
     const tagsArray = tags.split(',').map(tag => tag.trim());
 
@@ -17,6 +19,7 @@ function Cadastro() {
       titulo: titulo,
       tipo: tipo,
       descricao: descricao,
+      link: link,
       tags: tagsArray
     };
 
@@ -33,15 +36,46 @@ function Cadastro() {
         const dados = await resposta.json();
         alert("✅ " + dados.mensagem); // Mostra o recibo do Back-end na tela!
         
+        // limpando o formulário
         setTitulo('');
         setLink('');
         setDescricao('');
         setTags('');
       } else {
-        alert("❌ Erro: O servidor recusou os dados. Verifique os campos.");
+        alert("Erro: O servidor recusou os dados. Verifique os campos.");
       }
     } catch (erro) {
-      alert("❌ Erro de conexão. O seu terminal com o servidor Python está ligado?");
+      alert("Erro de conexão. ");
+      console.log(erro.mensagem)
+    }
+  };
+
+
+  // função para solicitar a resposta da IA
+  const GerarDescricaoIa = async () => {
+    if (titulo == "") {
+
+      alert ("ATENÇÃO: Digite um título para a ia poder trabalahar!")
+      return;
+    }
+
+    setDescricao("✨ A IA está pensando... aguarde um instante");  // texto para melhorar a experiência do usuário
+
+    try{
+      const url = `http://127.0.0.1:8000/materials/suggest?titulo=${titulo}&tipo=${tipo}`;
+      const resposta = await fetch(url);
+
+      if (resposta.ok) {
+        const dados = await resposta.json();
+        setDescricao(dados.descricao);
+        setTags(dados.tags.join(', '));
+      } else {
+        setDescricao("O servidor recusou o pedido, tente novamente");
+      }
+
+    } catch (error) {
+      setDescricao("Erro de conexão com o servidor da IA");
+      console.log(error.mensagem);
     }
   };
 
@@ -56,7 +90,7 @@ function Cadastro() {
           <label>Título:</label>
           <input 
             type="text" 
-            placeholder="Ex: Introdução à Matemática Discreta" 
+            placeholder="Ex: Crime e Castigo - Dostoiévski " 
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}
             required
@@ -65,7 +99,7 @@ function Cadastro() {
 
         <div className="campo">
           <label>Tipo:</label>
-          <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+          <select value={tipo} onChange={(e) => setTipo(e.target.value)}> 
             <option value="Vídeo">Vídeo</option>
             <option value="PDF">PDF</option>
             <option value="Link">Link</option>
@@ -82,7 +116,7 @@ function Cadastro() {
           />
         </div>
 
-        <button type="button" className="btn-ia">
+        <button type="button" className="btn-ia" onClick={GerarDescricaoIa}>
           ✨ Gerar Descrição com IA
         </button>
 
@@ -112,6 +146,9 @@ function Cadastro() {
 
         <button type="submit" className="btn-salvar">Salvar Material</button>
       </form>
+      <div className='btn-voltar' onClick={aoVoltar}>
+        {"<---"}
+      </div>
     </div>
   );
 }

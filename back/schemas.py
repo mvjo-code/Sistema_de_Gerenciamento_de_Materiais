@@ -5,4 +5,5 @@ class MaterialCriar(BaseModel):
     titulo: str
     tipo: str
     descricao: str
+    link: str
     tags: list[str]

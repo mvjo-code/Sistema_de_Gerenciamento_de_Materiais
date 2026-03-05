@@ -57,12 +57,13 @@ form {
   border-radius: 4%;
   font-family: "Libre Baskerville", serif;
   background-color: rgb(28, 28, 28);
-  outline: none;
+  outline: none;  
+  border: solid 2px white;
 }
 
 .campo input:hover, .campo select:hover, .campo textarea:hover{
     background-color: rgb(39, 39, 39);
-    border: solid 1px rgb(0, 83, 21);
+    border: solid 2px rgb(0, 83, 21);
 
 }
 hr {
@@ -93,6 +94,21 @@ button{
 .btn-ia:hover{
   background-color: rgb(87, 87, 0);
 }
+
+.btn-voltar {
+  color: red;
+  background-color: rgba(49, 4, 4, 0.395);
+  padding: 0 1em;
+  position: absolute;
+  left: 36%;
+}
+
+.btn-voltar:hover {
+  background-color: rgb(94, 7, 7);
+  cursor: pointer;
+}
+
+
 
 /* para telas menores */
 @media (max-width: 768px){
