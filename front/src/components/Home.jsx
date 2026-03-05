@@ -187,7 +187,7 @@ const handlePesquisar = () => {
         { // continuação do main
         }
         <h2 className='titulo'>Materiais Cadastrados</h2>
-        <p align-self="flex-start">Lista de materiais do V-Lab.</p>
+        <p className='vlab'>v lab</p>
 
         <div className='lista-de-materiais'>
           {carregando ? (

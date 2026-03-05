@@ -65,6 +65,12 @@
     font-size: 3.5em;
 }
 
+.home-container .vlab {
+    color: rgba(0, 0, 255, 0.534);
+    align-self: flex-start;
+    margin-left: 2em;
+}
+
 /* card */
 .lista-de-materiais {
     width: 100%;
@@ -191,7 +197,6 @@
     background-color: #f3f4f6; 
     border: none;
     border-radius: 8px;
-    transition: all 10ms;
 }
 
 .btn-editar:hover {
@@ -291,12 +296,7 @@
 }
 
 
-
-
-
-
-
-
+/* iniciando adaptação responsiva */
 @media (max-width: 768px) {
     .home-container{
         background-color: rgb(158, 95, 95);
