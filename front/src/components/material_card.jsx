@@ -22,7 +22,7 @@ function MaterialCard({material, onExcluir, onEditar}) {
 
                 <button className='btn-editar' onClick={() => onEditar(material)}> Editar</button>
 
-                <button className='btn-acessar'> Acessar</button>
+                <button className='btn-acessar' onClick={() => window.open(material.link, '_blank')}> Acessar</button>
 
                 <button className='btn-deletar' onClick={() => onExcluir(material.id)}> Deletar</button>
             </div>
