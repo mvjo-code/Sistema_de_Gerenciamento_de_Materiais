@@ -15,14 +15,12 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI(title="API do V-Lab")
 
 # gerenciamento básico de acesso á api
-origins = [
-    "http://localhost:5173", # Para testes locais 
-    "https://seu-front-vlab.vercel.app", # URL do deploy
-]
 
-app.add_middleware(
+app.add_middleware(   # em uma aplicação real, aqui se colocaria o link do site com acesso à API
+                        # mas para esse desafio, não valia a pena fazer dois deploys (expliquei melhor nas minhas
+                        # notas pessoais do README)
     CORSMiddleware,
-    allow_origins=origins, 
+    allow_origins=["*"], 
     allow_methods=["GET", "POST", "PUT", "DELETE"], # Mais seguro especificar os métodos
     allow_headers=["*"],
 )
